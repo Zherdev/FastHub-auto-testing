@@ -28,10 +28,10 @@ public class OpenTrendingTest extends authorizedBaseRunner {
         HomePage homePage = app.homePage;
 
         Sidebar sidebar = homePage.openSidebar();
-
+        sidebar.scrollToText("Trending");
         sidebar.click("Trending");
 
-        homePage.waitUntilPageLoaded();
+        homePage.waitUntilPageLoadedByAppbar();
         homePage.checkPageByName("Trending");
     }
 

@@ -13,7 +13,7 @@ import android.util.Log;
 
 import tech.zherdev.hw10.utils.Sidebar;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Класс Page представляет страницу (экран) в приложении.
@@ -36,12 +36,26 @@ public class Page {
     }
 
     /**
-     * Метод waitUntilPageLoaded() ожидает, пока не загрузится страница.
+     * Метод waitUntilPageLoadedByAppbar() ожидает, пока не загрузится страница.
+     * Загруженность проверятеся по наличию элемента Appbar.
      */
-    public void waitUntilPageLoaded() {
+    public void waitUntilPageLoadedByAppbar() {
         /* Загрузка проверяется по наличию элемента appbar */
         mDevice.wait(Until.hasObject(
                 By.res(FASTHUB_PACKAGE, "appbar")), TIMEOUT);
+        Log.i("tech.zherdev", "Страница " + this.getClass().getName() + " загружена");
+    }
+
+    /**
+     * Метод waitUntilPageLoadedByText(...) ожидает, пока не загрузится страница.
+     * Загруженность проверятеся по наличию текста на странице.
+     *
+     * @param text текст, ожидаемый на странице
+     */
+    public void waitUntilPageLoadedByText(String text) {
+        /* Загрузка проверяется по наличию элемента appbar */
+        mDevice.wait(Until.hasObject(
+                By.text(text)), TIMEOUT);
         Log.i("tech.zherdev", "Страница " + this.getClass().getName() + " загружена");
     }
 
@@ -52,8 +66,8 @@ public class Page {
      * @param name название страницы
      */
     public void checkPageByName(String name) {
-        assertFalse(mDevice.findObject(By.res(FASTHUB_PACKAGE, "appbar"))
-                .findObjects(By.text(name)).isEmpty());
+        assertTrue(mDevice.findObject(By.res(FASTHUB_PACKAGE, "appbar"))
+                .hasObject(By.text(name)));
         Log.i("tech.zherdev","Проверили: открыта страница с заголовком " + name);
     }
 
@@ -69,4 +83,5 @@ public class Page {
 
         return new Sidebar(mDevice.findObject(By.res(FASTHUB_PACKAGE, "extrasNav")));
     }
+
 }

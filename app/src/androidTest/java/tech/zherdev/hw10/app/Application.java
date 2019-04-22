@@ -14,8 +14,12 @@ import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.Until;
 import android.util.Log;
 
+import tech.zherdev.hw10.page.AboutPage;
+import tech.zherdev.hw10.page.FeedbackPage;
 import tech.zherdev.hw10.page.HomePage;
+import tech.zherdev.hw10.page.SettingsPage;
 import tech.zherdev.hw10.page.StartPage;
+import tech.zherdev.hw10.page.ThemesPage;
 
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
@@ -34,6 +38,10 @@ public class Application {
 
     public StartPage startPage;
     public HomePage homePage;
+    public SettingsPage settingsPage;
+    public ThemesPage themesPage;
+    public AboutPage aboutPage;
+    public FeedbackPage feedbackPage;
 
     private UiDevice mDevice;
 
@@ -45,6 +53,10 @@ public class Application {
 
         startPage = new StartPage(mDevice);
         homePage = new HomePage(mDevice);
+        settingsPage = new SettingsPage(mDevice);
+        themesPage = new ThemesPage(mDevice);
+        aboutPage = new AboutPage(mDevice);
+        feedbackPage = new FeedbackPage(mDevice);
     }
 
     public void close() {
@@ -72,4 +84,5 @@ public class Application {
         // Wait for the app to appear
         mDevice.wait(Until.hasObject(By.pkg(FASTHUB_PACKAGE).depth(0)), LAUNCH_TIMEOUT);
     }
+
 }

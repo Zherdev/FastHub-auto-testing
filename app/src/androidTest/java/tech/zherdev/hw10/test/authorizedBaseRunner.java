@@ -32,7 +32,7 @@ public class authorizedBaseRunner {
         startPage.closeChangelogIfOpened();
         String[] authData = getAuthData(); // login, pass
         startPage.basicAuthentication(authData[0], authData[1]);
-        startPage.waitUntilPageLoaded();
+        startPage.waitUntilPageLoadedByAppbar();
     }
 
     @After
