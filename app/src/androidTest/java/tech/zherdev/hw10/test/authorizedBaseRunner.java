@@ -29,6 +29,7 @@ public class authorizedBaseRunner {
         app = new Application();
 
         StartPage startPage = app.startPage;
+        startPage.waitForWindowUpdate();
         startPage.closeChangelogIfOpened();
         String[] authData = getAuthData(); // login, pass
         startPage.basicAuthentication(authData[0], authData[1]);

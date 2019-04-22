@@ -10,3 +10,4 @@
 /app/src/main/res/values/secrets.xml
 /app/fastaccess-key
 /changelog_generator
+/app/src/androidTest/assets/authData.txt

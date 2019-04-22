@@ -22,7 +22,7 @@ public class StartPage extends Page {
     }
 
     public void closeChangelogIfOpened() {
-        if (!mDevice.findObjects(By.text("Changelog")).isEmpty()) {
+        if (mDevice.hasObject(By.text("Changelog"))) {
             mDevice.pressBack();
             waitForWindowUpdate();
             Log.i("tech.zherdev", "StartPage: Закрыли changelog");
@@ -30,8 +30,8 @@ public class StartPage extends Page {
     }
 
     public void basicAuthentication(String login, String pass) {
-        if (!mDevice.findObjects(By.res(
-                "com.fastaccess.github.debug", "loginForm")).isEmpty()) {
+        if (mDevice.hasObject(By.res(
+                "com.fastaccess.github.debug", "loginForm"))) {
             mDevice.findObject(By.text("Basic Authentication")).click();
             waitForWindowUpdate();
 
