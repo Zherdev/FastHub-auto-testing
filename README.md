@@ -8,7 +8,7 @@ FastHub-auto-testing
 * "Открытие Trending". Смотри /test/OpenTrendingTest.java
 * "Смена темы". Смотри /test/ChangeThemeTest.java. Примечание: в UI Automator непосредственно нет возможности получить цвет элемента (Скриншот?..), поэтому для проверки мы пользуемся тем, что третья тема (справа от второй), является premium. Это и необходимо проверить. На устройстве Xiaomi Redmi 5 Plus тема не меняется, остается светлой, тест падает.
 * "Верстка". Смотри /test/DesignTest.java. Примечание: UI Automator не имеет возможности проверить конкретный source иконки, только ее наличие.
-* "Проверка Toast". Смотри /test/ToastTest.java. Приечание: UI Automator не имеет возможности проверить toast, поэтому проверяем только device information.
+* "Проверка Toast". Смотри /test/ToastTest.java. Примечание: UI Automator не имеет возможности проверить toast, поэтому проверяем только device information.
 
 Тест "Restore Purchases" не подлежит автоматизации UI Automator'ом, т.к. нет возможности проверить intent.
 
