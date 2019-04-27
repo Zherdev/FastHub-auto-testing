@@ -1,5 +1,5 @@
 /*
- * ThemesPage
+ * hw10: ThemesPage
  *
  * Ivan Zherdev, 2019
  */

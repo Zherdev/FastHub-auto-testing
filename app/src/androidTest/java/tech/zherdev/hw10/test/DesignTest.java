@@ -1,5 +1,5 @@
 /*
- * DesignTest
+ * hw10: DesignTest
  *
  * Ivan Zherdev, 2019
  */

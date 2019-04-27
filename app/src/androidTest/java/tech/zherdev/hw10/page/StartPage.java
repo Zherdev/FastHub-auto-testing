@@ -1,5 +1,5 @@
 /*
- * StartPage
+ * hw10: StartPage
  *
  * Ivan Zherdev, 2019
  */

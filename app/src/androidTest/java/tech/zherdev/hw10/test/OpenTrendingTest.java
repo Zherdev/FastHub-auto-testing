@@ -1,5 +1,5 @@
 /*
- * OpenTrendingTest
+ * hw10: OpenTrendingTest
  *
  * Ivan Zherdev, 2019
  */

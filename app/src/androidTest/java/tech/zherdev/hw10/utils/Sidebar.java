@@ -1,5 +1,5 @@
 /*
- * Sidebar
+ * hw10: Sidebar
  *
  * Ivan Zherdev, 2019
  */

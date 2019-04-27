@@ -1,5 +1,5 @@
 /*
- * ChangeThemeTest
+ * hw10: ChangeThemeTest
  *
  * Ivan Zherdev, 2019
  */

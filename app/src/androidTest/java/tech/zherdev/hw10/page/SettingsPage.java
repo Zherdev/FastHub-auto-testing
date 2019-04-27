@@ -1,5 +1,5 @@
 /*
- * SettingsPage
+ * hw10: SettingsPage
  *
  * Ivan Zherdev, 2019
  */

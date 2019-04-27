@@ -1,5 +1,5 @@
 /*
- * Page
+ * hw10: Page
  *
  * Ivan Zherdev, 2019
  */
@@ -79,6 +79,7 @@ public class Page {
     public Sidebar openSidebar() {
         mDevice.findObject(By.res("com.fastaccess.github.debug", "appbar"))
                 .findObject(By.clazz("android.widget.ImageButton")).click();
+        waitForWindowUpdate();
         Log.i("tech.zherdev", "Открыли боковое меню");
 
         return new Sidebar(mDevice.findObject(By.res(FASTHUB_PACKAGE, "extrasNav")));

@@ -1,5 +1,5 @@
 /*
- * Application
+ * hw10: Application
  *
  * Ivan Zherdev, 2019
  */

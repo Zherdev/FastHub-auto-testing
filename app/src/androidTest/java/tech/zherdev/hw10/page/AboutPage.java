@@ -1,5 +1,5 @@
 /*
- * AboutPage
+ * hw10: AboutPage
  *
  * Ivan Zherdev, 2019
  */

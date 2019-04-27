@@ -1,5 +1,5 @@
 /*
- * HomePage
+ * hw10: HomePage
  *
  * Ivan Zherdev, 2019
  */
