@@ -1,5 +1,5 @@
 /*
- * hw11: AbstractApplication
+ * hw11: AbstractApplicationTest
  *
  * Ivan Zherdev, 2019
  */
@@ -14,24 +14,30 @@ import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.UiDevice;
 import android.util.Log;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 
 import java.io.IOException;
 
 /**
- * Класс AbstractApplication представляет некоторое тестируемое приложение.
+ * Класс AbstractApplicationTest предназначен для тестирования некоторого приложения.
  *
  * @author Ivan Zherdev
  */
 @RunWith(AndroidJUnit4.class)
-public class AbstractApplication {
+public class AbstractApplicationTest {
 
     @Before
     public void setUp() {
         grantPermissions();
         getDevice().pressHome();
         getDevice().pressBack();
+    }
+
+    @After
+    public void tearDown() {
+        getDevice().pressHome();
     }
 
     public UiDevice getDevice() {

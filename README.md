@@ -1,35 +1,28 @@
-FastHub-auto-testing
-====================
+FastHub-auto-testing v.2
+========================
 
-Смотри пакет /app/src/androidTest/java/tech/zherdev/hw10
+Смотри пакет /app/src/androidTest/java/tech/zherdev/hw11
 
-При помощи UI Automator 2.1.3 выполнены тесты:
+При помощи Espresso версии 3.0.2 выполнены тесты:
 
 * "Открытие Trending". Смотри /test/OpenTrendingTest.java
-* "Смена темы". Смотри /test/ChangeThemeTest.java. Примечание: в UI Automator непосредственно нет возможности получить цвет элемента (Скриншот?..), поэтому для проверки мы пользуемся тем, что третья тема (справа от второй), является premium. Это и необходимо проверить. На устройстве Xiaomi Redmi 5 Plus тема не меняется, остается светлой, тест падает.
-* "Верстка". Смотри /test/DesignTest.java. Примечание: UI Automator не имеет возможности проверить конкретный source иконки, только ее наличие.
-* "Проверка Toast". Смотри /test/ToastTest.java. Примечание: UI Automator не имеет возможности проверить toast, поэтому проверяем только device information.
+* "Смена темы". Смотри /test/ChangeThemeTest.java
+* "Проверка Toast". Смотри /test/ToastTest.java
+* "Restore Purchases". Смотри /test/RestorePurchasesTest.java
 
-Тест "Restore Purchases" не подлежит автоматизации UI Automator'ом, т.к. нет возможности проверить intent.
+Тест "Верстка" вызвал затруднения. Допилю. Смотри /test/DesignTest.java
 
 
 Внимание!
 ---------
 
-Разместите в каталоге /app/src/androidTest/assets/ файл authData.txt для авторизации в приложении.
-
-Пример:
-
-```
-login
-pass
-```
+Перед запуском автотестов авторизуйтесь в приложении.
 
 
 Логгирование
 ------------
 
-Для просмотра тестовых логов смотрите тег "tech.zherdev" в Logcat.
+Следуя комментарию к предыдущему ДЗ, убрал лишние логи.
 
 
 Автор тестов

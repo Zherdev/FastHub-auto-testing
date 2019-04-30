@@ -1,5 +1,5 @@
 /*
- * hw11: ConcreteApplication
+ * hw11: ConcreteApplicationTest
  *
  * Ivan Zherdev, 2019
  */
@@ -11,16 +11,16 @@ import android.content.Intent;
 import android.support.test.rule.ActivityTestRule;
 
 /**
- * Класс ConcreteApplication предстаявляет конкретное тестируемое приложение.
+ * Класс ConcreteApplicationTest предназначен для тестировния конкретного приложения.
  *
  * @param <T> активити, с которой начинается тест
  * @author Ivan Zherdev
  */
-public class ConcreteApplication<T extends Activity> extends AbstractApplication {
+public class ConcreteApplicationTest<T extends Activity> extends AbstractApplicationTest {
 
     private final ActivityTestRule<T> rule;
 
-    public ConcreteApplication(Class<T> clazz) {
+    public ConcreteApplicationTest(Class<T> clazz) {
         rule = new ActivityTestRule<>(clazz, true, false);
     }
 

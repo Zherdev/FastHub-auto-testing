@@ -14,10 +14,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import tech.zherdev.hw11.page.HomePage;
+import tech.zherdev.hw11.page.SettingsPage;
+import tech.zherdev.hw11.page.ThemesPage;
 import tech.zherdev.hw11.utils.Sidebar;
 
 /**
- * Тест "Открытие Trending"
+ * Тест "Смена темы"
  *
  * @author Ivan Zherdev
  */
@@ -25,11 +27,20 @@ import tech.zherdev.hw11.utils.Sidebar;
 public class ChangeThemeTest extends authorizedBaseRunner {
 
     @Test
-    public void openTrendingTest() {
+    public void changeThemeTest() {
         HomePage homePage = new HomePage();
+
         Sidebar sidebar = homePage.openSidebar();
-        sidebar.navigateTo(R.id.trending);
-        homePage.checkPageByName("Trending");
+        sidebar.navigateTo(R.id.settings);
+
+        SettingsPage settingsPage = new SettingsPage();
+        settingsPage.goToThemes();
+
+        ThemesPage themesPage = new ThemesPage();
+        themesPage
+                .swipeToRightTheme()
+                .applyTheme()
+                .checkThemeByColor(-3355444); // Цвет элемента в серой теме
     }
 
 }

@@ -1,46 +1,44 @@
 /*
- * hw11: ThemesPage
+ * hw11: AboutPage
  *
  * Ivan Zherdev, 2019
  */
 
 package tech.zherdev.hw11.page;
 
-import android.support.test.espresso.contrib.ViewPagerActions;
+import android.view.View;
 
-import com.fastaccess.App;
-import com.fastaccess.R;
-import com.fastaccess.helper.ViewHelper;
+import org.hamcrest.Matcher;
 
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static org.junit.Assert.assertEquals;
-import static tech.zherdev.hw11.mathcer.CustomMatchers.getElementFromMatchAtPosition;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
+import static android.support.test.espresso.matcher.ViewMatchers.withParent;
+import static android.support.test.espresso.matcher.ViewMatchers.withParentIndex;
+import static org.hamcrest.CoreMatchers.allOf;
+import static org.hamcrest.CoreMatchers.containsString;
 
 /**
- * Класс ThemesPage представляет страницу смены тем в приложении.
+ * Класс AboutPage представляет страницу About в приложении.
  *
  * @author Ivan Zherdev
  */
 public class AboutPage extends Page {
 
-    public AboutPage swipeToRightTheme() {
-        onView(withId(R.id.pager))
-                .perform(ViewPagerActions.scrollRight());
-        return this;
-    }
-
-    public AboutPage applyTheme() {
-        onView(getElementFromMatchAtPosition(withId(R.id.apply), 1))
-            .perform(click());
-        return this;
-    }
-
-    public AboutPage checkThemeByColor(int color) {
-        // Цвет определяется по ViewHelper'у
-        assertEquals(color, ViewHelper.getPrimaryColor(App.getInstance().getBaseContext()));
-        return this;
+    /**
+     * Метод checkRecycler(...) осуществляет проверку списка на странице.
+     *
+     * @param matcher матчер, по которому ищется элемент
+     * @param position позиция в списке
+     */
+    public void checkRecycler(Matcher<View> matcher, int position) {
+        onView(allOf(
+                withParent(allOf(
+                    withClassName(containsString("LinearLayout")),
+                    withParentIndex(position))),
+                matcher))
+                .check(matches(isDisplayed()));
     }
 
 }

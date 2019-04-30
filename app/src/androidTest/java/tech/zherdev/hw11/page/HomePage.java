@@ -1,5 +1,5 @@
 /*
- * hw11: MainPage
+ * hw11: HomePage
  *
  * Ivan Zherdev, 2019
  */
@@ -7,10 +7,10 @@
 package tech.zherdev.hw11.page;
 
 /**
- * Класс MainPage представляет домашнюю (main) страницу в приложении.
+ * Класс HomePage представляет домашнюю (main) страницу в приложении.
  *
  * @author Ivan Zherdev
  */
-public class MainPage extends Page {
+public class HomePage extends Page {
 
 }
